@@ -21,15 +21,24 @@ namespace WPFTest
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string Test = "明月松间照，清泉石上流。";  
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        public Type MyWindowType { get; set; } 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Human human = (Human)this.FindResource("human");
-            MessageBox.Show(human.Child.Name);
+            //MessageBox.Show(human.Child.Name);
+            object obj = this.FindResource("myString");
+            object obj1 = this.FindResource(typeof(Button));
+
+            Window myWin = Activator.CreateInstance(this.MyWindowType) as Window;
+            if (myWin != null)
+            {
+                myWin.Show();
+            }  
         }
     }
 
@@ -45,5 +54,5 @@ namespace WPFTest
             }
             return base.ConvertFrom(context, culture, value);
         }
-    }  
+    }
 }
