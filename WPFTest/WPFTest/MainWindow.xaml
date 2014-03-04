@@ -5,8 +5,8 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         Title="MainWindow" Height="350" Width="525">
     <Grid Name="grid_aaa" x:FieldModifier="public">
-        <y:UserControl1 HorizontalAlignment="Left" Margin="292,244,0,0" x:Name="userControl11" VerticalAlignment="Top" MyWindowType="{x:Type TypeName=y:MainWindow}"/>
-        <Rectangle HorizontalAlignment="Left" Height="100" Margin="127,142,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" >
+        <y:UserControl1 HorizontalAlignment="Left" Margin="401,40,0,0" x:Name="userControl11" VerticalAlignment="Top" MyWindowType="{x:Type TypeName=y:MainWindow}"/>
+        <Rectangle HorizontalAlignment="Left" Height="100" Stroke="Black" VerticalAlignment="Top" Width="100" >
             <Rectangle.Fill>
                 <LinearGradientBrush>
                     <LinearGradientBrush.StartPoint>
@@ -23,7 +23,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="317,142,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="432,13,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <ListBox Height="100" HorizontalAlignment="Left" Margin="435,110,0,0" Name="listBox1" VerticalAlignment="Top" Width="176">
             <ListBox.ItemsSource>
                 <x:Array Type="sys:String">
@@ -33,7 +33,15 @@
                 </x:Array>
             </ListBox.ItemsSource>
         </ListBox>
-        <Button Content="{x:Static y:MainWindow.Test}" Height="23" HorizontalAlignment="Left" Margin="128,12,0,0" Name="button3" VerticalAlignment="Top" Style="{x:Null}"/>
+        <Button Content="{x:Static y:MainWindow.Test}" Height="23" HorizontalAlignment="Left" Margin="128,12,0,0" Name="button3" VerticalAlignment="Top" Style="{x:Null}" Click="Button_Click2"/>
+        <TextBox Name="text0" HorizontalAlignment="Left" Height="23" Margin="128,40,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <!--<TextBox Height="23" HorizontalAlignment="Left" Margin="127,78,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" Text="{Binding Path=Value,ElementName=slider1}"/>-->
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="127,78,0,0" Name="textBox1" VerticalAlignment="Top" Width="120"/>
+        <Slider Height="23" HorizontalAlignment="Left" Margin="84,106,0,0" Name="slider1" VerticalAlignment="Top" Width="212" />
+        <TextBox Name="t1" HorizontalAlignment="Left" Height="23" Margin="10,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="t2" HorizontalAlignment="Left" Height="23" Margin="10,197,0,0" TextWrapping="Wrap" Text="{Binding Path=Text.Length,ElementName=t1,Mode=OneWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,235,0,0" TextWrapping="Wrap" Text="{Binding Text[3],ElementName=t1,Mode=OneWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="textList" HorizontalAlignment="Left" Height="23" Margin="189,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
     </Grid>
     <Window.Resources>
         <y:Human x:Key="human">

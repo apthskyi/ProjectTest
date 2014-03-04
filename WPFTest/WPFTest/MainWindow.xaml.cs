@@ -21,12 +21,34 @@ namespace WPFTest
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static string Test = "明月松间照，清泉石上流。";  
+        public static string Test = "明月松间照，清泉石上流。";
+        Human hu;
         public MainWindow()
         {
             InitializeComponent();
+            hu = new Human();
+            hu.Name = "1";
+            Binding binding = new Binding();
+            binding.Source = hu;
+            binding.Path = new PropertyPath("Name");
+            this.text0.SetBinding(TextBox.TextProperty, binding);
+
+            Binding tsB = new Binding();
+            //tsB.ElementName = "slider1";
+            tsB.Path = new PropertyPath("Value");
+            tsB.Source = this.slider1;
+            tsB.UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged;
+            tsB.Mode = BindingMode.TwoWay;
+            this.textBox1.SetBinding(TextBox.TextProperty, tsB);
+
+            List<string> infos = new List<string>() { "Jim", "Darren", "Jacky" };
+            Binding lB = new Binding("/");
+            lB.Source = infos;
+            lB.Mode = BindingMode.OneWay;
+            this.textList.SetBinding(TextBox.TextProperty, lB);
         }
         public Type MyWindowType { get; set; } 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Human human = (Human)this.FindResource("human");
@@ -38,7 +60,13 @@ namespace WPFTest
             if (myWin != null)
             {
                 myWin.Show();
-            }  
+            }
+        }
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            
+            hu.Name += "f";
         }
     }
 

@@ -8,9 +8,22 @@ using System.Threading.Tasks;
 namespace WPFTest
 {
     [TypeConverterAttribute(typeof(StringToHumanTypeConverter))]
-    public class Human
+    public class Human : INotifyPropertyChanged
     {
-        public Human Child{get;set;}
-        public string Name{get;set;}
+        public Human Child { get; set; }
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Name"));
+                }
+            }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
