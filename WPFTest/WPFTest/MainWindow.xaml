@@ -3,8 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:y="clr-namespace:WPFTest"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="700" Width="1050">
     <Grid Name="grid_aaa" x:FieldModifier="public">
+        <Grid.DataContext>
+            <y:Human Name="AAA" Age="25"></y:Human>
+        </Grid.DataContext>
         <y:UserControl1 HorizontalAlignment="Left" Margin="401,40,0,0" x:Name="userControl11" VerticalAlignment="Top" MyWindowType="{x:Type TypeName=y:MainWindow}"/>
         <Rectangle HorizontalAlignment="Left" Height="100" Stroke="Black" VerticalAlignment="Top" Width="100" >
             <Rectangle.Fill>
@@ -42,6 +45,15 @@
         <TextBox Name="t2" HorizontalAlignment="Left" Height="23" Margin="10,197,0,0" TextWrapping="Wrap" Text="{Binding Path=Text.Length,ElementName=t1,Mode=OneWay}" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,235,0,0" TextWrapping="Wrap" Text="{Binding Text[3],ElementName=t1,Mode=OneWay}" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="textList" HorizontalAlignment="Left" Height="23" Margin="189,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="t3" HorizontalAlignment="Left" Height="23" Margin="189,197,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="t4" HorizontalAlignment="Left" Height="23" Margin="189,235,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <y:ItemControl HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+        <y:ADOListView HorizontalAlignment="Left" Margin="668,0,0,0" VerticalAlignment="Top" Height="100" Width="241"/>
+        <y:XmlBinding HorizontalAlignment="Left" Margin="677,122,0,0" VerticalAlignment="Top" Height="73" Width="255"/>
+        <y:TreeView HorizontalAlignment="Left" Margin="352,329,0,0" VerticalAlignment="Top" Height="74" Width="127"/>
+        <y:LinqBinding HorizontalAlignment="Left" Margin="668,212,0,0" VerticalAlignment="Top" Height="100"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="352,479,0,0" VerticalAlignment="Top" Width="75" Style="{x:Null}" Click="Button_ClickAdd"/>
+        <y:ObjDataSrc HorizontalAlignment="Left" Margin="668,386,0,0" VerticalAlignment="Top"/>
     </Grid>
     <Window.Resources>
         <y:Human x:Key="human">

@@ -24,6 +24,33 @@ namespace WPFTest
                 }
             }
         }
+        private int age;
+        public int Age
+        {
+            set
+            {
+                age = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Age"));
+                }
+            }
+            get { return age; }
+        }
+
+        private int id;
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                id = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Id"));
+                }
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -46,6 +46,15 @@ namespace WPFTest
             lB.Source = infos;
             lB.Mode = BindingMode.OneWay;
             this.textList.SetBinding(TextBox.TextProperty, lB);
+
+            Binding nB = new Binding();
+            nB.Source = MainWindow.Test;
+            nB.Mode = BindingMode.OneWay;
+            this.t3.SetBinding(TextBox.TextProperty, nB);
+
+            Binding contextB = new Binding();
+            contextB.Path = new PropertyPath("Age");
+            this.t4.SetBinding(TextBox.TextProperty, contextB);//{Binding Path=Age}
         }
         public Type MyWindowType { get; set; } 
 
@@ -68,6 +77,16 @@ namespace WPFTest
             
             hu.Name += "f";
         }
+
+        private void Button_ClickAdd(object sender, RoutedEventArgs e)
+        {
+            ObjectDataProvider odp = new ObjectDataProvider();
+            odp.ObjectInstance = new Caculate();
+            odp.MethodName = "Add";
+            odp.MethodParameters.Add("100");
+            odp.MethodParameters.Add("200");
+            MessageBox.Show(odp.Data.ToString());  
+        }
     }
 
     public class StringToHumanTypeConverter : TypeConverter
@@ -83,4 +102,22 @@ namespace WPFTest
             return base.ConvertFrom(context, culture, value);
         }
     }
+
+    public class Caculate
+    {
+        public string Add(string arg1, string arg2)
+        {
+            double x = 0;
+            double y = 0;
+            double z = 0;
+            if (double.TryParse(arg1, out x) && double.TryParse(arg2, out y))
+            {
+                z = x + y;
+                return z.ToString();
+            }
+            return "Iput Error";
+        }
+
+        //其它方法省略  
+    } 
 }
