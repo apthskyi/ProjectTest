@@ -56,6 +56,9 @@
     <Compile Include="ADOListView.xaml.cs">
       <DependentUpon>ADOListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BindingConvert.xaml.cs">
+      <DependentUpon>BindingConvert.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ItemControl.xaml.cs">
       <DependentUpon>ItemControl.xaml</DependentUpon>
     </Compile>
@@ -65,16 +68,26 @@
     <Compile Include="ObjDataSrc.xaml.cs">
       <DependentUpon>ObjDataSrc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RelativeBinding.xaml.cs">
+      <DependentUpon>RelativeBinding.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TreeView.xaml.cs">
       <DependentUpon>TreeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValidateRule.xaml.cs">
+      <DependentUpon>ValidateRule.xaml</DependentUpon>
+    </Compile>
     <Compile Include="XmlBinding.xaml.cs">
       <DependentUpon>XmlBinding.xaml</DependentUpon>
     </Compile>
     <Page Include="ADOListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BindingConvert.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -103,11 +116,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RelativeBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TreeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ValidateRule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,6 +163,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\bomber.jpg" />
+    <Resource Include="Icon\fighter.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

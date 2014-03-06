@@ -1,4 +1,4 @@
-﻿    <Window x:Class="WPFTest.MainWindow"
+﻿<Window x:Class="WPFTest.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:y="clr-namespace:WPFTest"
@@ -53,7 +53,10 @@
         <y:TreeView HorizontalAlignment="Left" Margin="352,329,0,0" VerticalAlignment="Top" Height="74" Width="127"/>
         <y:LinqBinding HorizontalAlignment="Left" Margin="668,212,0,0" VerticalAlignment="Top" Height="100"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="352,479,0,0" VerticalAlignment="Top" Width="75" Style="{x:Null}" Click="Button_ClickAdd"/>
-        <y:ObjDataSrc HorizontalAlignment="Left" Margin="668,386,0,0" VerticalAlignment="Top"/>
+        <y:ObjDataSrc HorizontalAlignment="Left" Margin="463,408,0,0" VerticalAlignment="Top"/>
+        <y:RelativeBinding HorizontalAlignment="Left" Margin="335,525,0,0" VerticalAlignment="Top"/>
+        <y:ValidateRule HorizontalAlignment="Left" Margin="484,525,0,0" VerticalAlignment="Top"/>
+        <y:BindingConvert HorizontalAlignment="Left" Margin="668,363,0,0" VerticalAlignment="Top" Height="259" Width="300"/>
     </Grid>
     <Window.Resources>
         <y:Human x:Key="human">
