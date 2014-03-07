@@ -74,6 +74,9 @@
     <Compile Include="ObjDataSrc.xaml.cs">
       <DependentUpon>ObjDataSrc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Property.xaml.cs">
+      <DependentUpon>Property.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RelativeBinding.xaml.cs">
       <DependentUpon>RelativeBinding.xaml</DependentUpon>
     </Compile>
@@ -127,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ObjDataSrc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Property.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
