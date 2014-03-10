@@ -80,6 +80,9 @@
     <Compile Include="RelativeBinding.xaml.cs">
       <DependentUpon>RelativeBinding.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RoutedEventWindow.xaml.cs">
+      <DependentUpon>RoutedEventWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TreeView.xaml.cs">
       <DependentUpon>TreeView.xaml</DependentUpon>
     </Compile>
@@ -138,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RelativeBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RoutedEventWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
