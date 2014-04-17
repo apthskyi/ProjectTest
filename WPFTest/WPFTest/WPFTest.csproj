@@ -56,8 +56,14 @@
     <Compile Include="ADOListView.xaml.cs">
       <DependentUpon>ADOListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AttachedEventWindow.xaml.cs">
+      <DependentUpon>AttachedEventWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BindingConvert.xaml.cs">
       <DependentUpon>BindingConvert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommandWindow.xaml.cs">
+      <DependentUpon>CommandWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DependencyObjectTest.xaml.cs">
       <DependentUpon>DependencyObjectTest.xaml</DependentUpon>
@@ -80,6 +86,9 @@
     <Compile Include="RelativeBinding.xaml.cs">
       <DependentUpon>RelativeBinding.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ResourceWindow.xaml.cs">
+      <DependentUpon>ResourceWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RoutedEventWindow.xaml.cs">
       <DependentUpon>RoutedEventWindow.xaml</DependentUpon>
     </Compile>
@@ -99,7 +108,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AttachedEventWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BindingConvert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommandWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RelativeBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

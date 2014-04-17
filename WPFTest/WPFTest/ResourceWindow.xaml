@@ -1,0 +1,23 @@
+﻿<Window x:Class="WPFTest.ResourceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"  
+        Title="ResourceWindow" Height="300" Width="300">
+    <Window.Resources>
+        <ResourceDictionary>
+            <sys:String x:Key="str">沉舟侧畔千帆过，病树前头万木春。</sys:String>
+            <sys:Double x:Key="db">3.1415926</sys:Double>
+            <sys:String x:Key="res1">海上生明月</sys:String>
+            <sys:String x:Key="res2">海上生明月</sys:String>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{ StaticResource ResourceKey=str}"></TextBlock>
+            <!--<TextBlock Text="{StaticResource ResourceKey=db}"></TextBlock>-->
+            <Button Content="{StaticResource res1}" Margin="5"></Button>
+            <Button Content="{DynamicResource res2}" Margin="5"></Button>
+            <Button Content="Update" Margin="5" Click="Button_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
